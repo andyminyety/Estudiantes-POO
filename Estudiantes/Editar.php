@@ -100,15 +100,15 @@ if (isset($_POST["Id"]) && isset($_POST["Nombre"]) && isset($_POST["Apellido"]) 
                         <input name="ProfilePhoto" type="file" class="form-control" id="Photo">
                     </div>
 
-                    <div class="form-check">
+                    <div class="form-check form-switch">
                         
                     <?php if($Student->Status): ?>
                         
-                        <input class="form-check-input" type="checkbox" name="Status" value="activo" id="flexCheckChecked" checked>
+                        <input class="form-check-input" type="checkbox" name="Status" value="activo" id="flexSwitchCheckChecked" checked>
                         
                     <?php else: ?>
                         
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                        <input class="form-check-input" type="checkbox" name="Status" value="activo" id="flexSwitchCheckDefault">
                     
                     <?php endif;?>
 
