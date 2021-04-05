@@ -100,23 +100,40 @@ if (isset($_POST["Id"]) && isset($_POST["Nombre"]) && isset($_POST["Apellido"]) 
                         <input name="ProfilePhoto" type="file" class="form-control" id="Photo">
                     </div>
 
-                    <div class="form-check form-switch">
+                    <div class="form-check form-check-inline">
                         
                     <?php if($Student->Status): ?>
                         
-                        <input class="form-check-input" type="checkbox" name="Status" value="activo" id="flexSwitchCheckChecked" checked>
-                        
+                        <input class="form-check-input" type="radio" name="Status" id="inlineRadio1" value="activo" checked>
+      
                     <?php else: ?>
+
+                        <input class="form-check-input" type="radio" name="Status" id="inlineRadio1" value="activo">
                         
-                        <input class="form-check-input" type="checkbox" name="Status" value="activo" id="flexSwitchCheckDefault">
-                    
                     <?php endif;?>
 
-                    <label class="form-check-label margin-bottom-5" for="flexCheckChecked">Activo</label>
+                    <label class="form-check-label margin-bottom-5" for="inlineRadio">Activo</label>
                     </div>
-                
-                    <button type="submit" class="btn btn-primary float-end margin-left-1">Guardar</button>
-                    <a href="../index.php" class="btn btn-dark float-end margin-left-1 margin-bottom-5">Volver atras</a>
+
+                    <div class="form-check form-check-inline">
+                        
+                    <?php if($Student->Status): ?>
+                        
+                        <input class="form-check-input" type="radio" name="Status" id="inlineRadio1" value="inactivo">
+      
+                    <?php else: ?>
+                        
+                        <input class="form-check-input" type="radio" name="Status" id="inlineRadio1" value="inactivo" checked>
+
+                    <?php endif;?>
+
+                    <label class="form-check-label margin-bottom-5" for="inlineRadio2">Inactivo</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary float-end margin-left-1 margin-top-2">Guardar</button>
+                        <a href="../index.php" class="btn btn-dark float-end margin-left-1 margin-top-2 margin-bottom-5">Volver atras</a>
+                    </div>
                 </form>
                 </div>
             </div>
