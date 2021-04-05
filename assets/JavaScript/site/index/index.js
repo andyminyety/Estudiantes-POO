@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-   $("#btn-delete").on("click",function(){
+   $(".btn-delete").on("click",function(){
     
     let Id = $(this).data("id");
 

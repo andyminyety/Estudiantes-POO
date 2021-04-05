@@ -88,7 +88,7 @@ if(!empty($Students)){
 
                         <a href="Estudiantes/Detalles.php?id=<?= $Student->Id ?>" class="btn btn-success float-end margin-left-1">Detalles</a>
                         <a href="Estudiantes/Editar.php?id=<?= $Student->Id ?>" class="btn btn-primary float-end margin-left-1">Editar</a>
-                        <a href="#" id="btn-delete" data-id="<?= $Student->Id ?>" class="btn btn-danger float-end margin-left-1">Eliminar</a>
+                        <a href="#" data-id="<?= $Student->Id ?>" class="btn btn-danger btn-delete float-end margin-left-1">Eliminar</a>
                     </div>
                 </div>
             </div>
