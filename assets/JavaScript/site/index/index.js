@@ -4,7 +4,7 @@ $(document).ready(function(){
     
     let Id = $(this).data("id");
 
-    if(confirm("Estas seguro que deseas eliminar a este estudiante?")){
+    if(confirm("Estás seguro que deseas eliminar a este estudiante?")){
 
         if(Id !== null && Id !== undefined && Id !== "" ){
             window.location.href = "Estudiantes/Eliminar.php?id=" + Id;            
