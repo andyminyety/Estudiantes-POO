@@ -64,7 +64,7 @@ if (isset($_POST["Id"]) && isset($_POST["Nombre"]) && isset($_POST["Apellido"]) 
                     </div>
 
                     <div class="mb-3">
-                        <label for="Student-Apellido" class="form-label">Descripción</label>
+                        <label for="Student-Apellido" class="form-label">Apellido del Estudiante</label>
                         <input name="Apellido" value="<?php echo $Student->Apellido ?>" type="text" class="form-control" id="Student-Apellido">
                     </div>
 
