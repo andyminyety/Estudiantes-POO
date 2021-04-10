@@ -88,7 +88,7 @@ if (isset($_POST["Id"]) && isset($_POST["Nombre"]) && isset($_POST["Apellido"]) 
                         <input name="Materias"value="<?php echo $Student->Materias ?>" type="text" class="form-control" id="Materias">
                     </div>
                     <div class="mb-3">
-                    <?php if($Student->ProfilePhoto == ""|| $Student->ProfilePhoto == null): ?>
+                    <?php if($Student->ProfilePhoto == "" || $Student->ProfilePhoto == null): ?>
                         <img class="bd-placeholder-img card-img-top" src="<?= "../assets/Img/default.jpg" ?>" height="210" aria-label="Placeholder: Thumbnail">
                     <?php else :?>
                         <img class="bd-placeholder-img card-img-top" src="<?= "../assets/Img/Estudiante/" . $Student->ProfilePhoto; ?>" width="100%" height="235" aria-label="Placeholder: Thumbnail">

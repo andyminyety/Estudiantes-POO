@@ -5,7 +5,7 @@
     public $Carreras = [1=>"Redes", 2=>"Software", 3=>"Multimedia", 4=>"Mecatronica", 5=>"Seguridad informática"];
  
 
-    public function getLastElement($list){
+    public function GetLastElement($list){
 
         $countList = count($list);
         $lastElement = $list[$countList -1];
@@ -14,7 +14,7 @@
 
     }
 
-    public function searchProperty($list,$property,$value){
+    public function SearchProperty($list,$property,$value){
 
         $filters = [];
 
@@ -24,19 +24,16 @@
                 array_push($filters, $item);
             }
         }
-
         return $filters;
     }
 
-
-    public function getIndexElement($list,$property,$value){
+    public function GetIndexElement($list,$property,$value){
 
         $index =0;
         foreach($list as $key => $item){
 
             if($item->$property == $value){             
-                $index= $key;              
-               
+                $index= $key;                
             }
         }
         return $index;
@@ -58,17 +55,16 @@
                 }
             }else{
 
-                $this ->uploadFIle($directory . $name,$tmpFIle);
-                $isSuccess = true;
-
+                    $this ->uploadFIle($directory . $name,$tmpFIle);
+                    $isSuccess = true;
             }
 
         }else{
             $isSuccess =false;
         }
         return $isSuccess;
-
     }
+
     private function uploadFIle($name,$tmpFIle){
         if(file_exists($name)){
             unlink($name);
@@ -76,6 +72,4 @@
         move_uploaded_file($tmpFIle,$name);
         $isSuccess = true;
     }
-
-
 }

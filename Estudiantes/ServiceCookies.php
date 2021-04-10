@@ -3,7 +3,6 @@
  class ServiceCookies{   
 
     private $CookieName;
-
     private $Utilities;
 
     public function __construct(){
@@ -17,15 +16,13 @@
         $Students = $this->GetList();
         $StudentId = 1;
 
-
         if(!empty($Students)){
-            $lastElement = $this->Utilities->getLastElement($Students);
+            $lastElement = $this->Utilities->GetLastElement($Students);
 
             $StudentId = $lastElement->Id + 1;
         }
-        $item ->ProfilePhoto = "";  
+        $item->ProfilePhoto = "";  
         $item->Id = $StudentId;
-
     
         if(isset($_FILES["ProfilePhoto"])){
 
@@ -53,18 +50,21 @@
 
     }
 
-    public function Edit( $item){   
+    public function Edit($item){   
 
-        
         $Students = $this->GetList();
-        
-        $index = $this->Utilities->getIndexElement($Students,"Id",$item->Id);
+        $index = $this->Utilities->GetIndexElement($Students,"Id",$item->Id);
+
         if(isset($_FILES["ProfilePhoto"])){
 
             $photoFile = $_FILES["ProfilePhoto"];
+
             if($photoFile["error"]== 4){
+                
                 $item->ProfilePhoto = $index->ProfilePhoto;
+
             }else{
+                
                 $typeReplace =str_replace("mage/","",$_FILES["ProfilePhoto"]["type"]);
                 $type = $_FILES["ProfilePhoto"]["type"];
                 $size = $_FILES["ProfilePhoto"]["size"];
@@ -90,7 +90,7 @@
         
         $Students = $this->GetList();
         
-        $index = $this->Utilities->getIndexElement($Students,"Id",$item->Id);
+        $index = $this->Utilities->GetIndexElement($Students,"Id",$item->Id);
         if(isset($_FILES["ProfilePhoto"])){
 
             $photoFile = $_FILES["ProfilePhoto"];
@@ -121,7 +121,7 @@
     public function Delete($id){
         $Students = $this->GetList();
 
-        $index = $this->Utilities->getIndexElement($Students,"Id",$id);
+        $index = $this->Utilities->GetIndexElement($Students,"Id",$id);
 
         if(count($Students) > 0){
             unset($Students[$index]);
@@ -134,7 +134,7 @@
 
         $Students = $this->GetList();
 
-        $Student = $this->Utilities->searchProperty($Students,"Id",$id);     
+        $Student = $this->Utilities->SearchProperty($Students,"Id",$id);     
         
         return $Student[0];
     }
@@ -153,8 +153,7 @@
 
     private function GetCookieTime(){
         return time() + 60 * 60 * 24 * 30;
-    }   
-   
+    }     
 }
 
 ?>
